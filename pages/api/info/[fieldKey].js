@@ -13,7 +13,7 @@ export default async function handler(req,res){
     } else {
         const fieldValue = await getInfo().then(info => info[fieldKey])
         if (typeof fieldValue === "undefined") res.status(404).json("404: key " + fieldKey + " not found in " +propertyID+ " info obj")
-        else res.status(200).json({response : fieldValue})
+        else res.status(200).json(fieldValue)
     }
 }
 
